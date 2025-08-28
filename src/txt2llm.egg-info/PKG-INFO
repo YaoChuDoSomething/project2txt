@@ -1,0 +1,60 @@
+Metadata-Version: 2.4
+Name: txt2llm
+Version: 0.1.0
+Summary: A developer utility that consolidates an entire project's text-based files into a single output file, optimized for context-rich interactions with Large Language Models (LLMs).
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: flake8>=7.3.0
+Requires-Dist: isort>=6.0.1
+Requires-Dist: pydocstyle>=6.3.0
+Requires-Dist: pytest>=8.4.1
+Requires-Dist: setuptools>=80.9.0
+Dynamic: license-file
+
+# README.md 
+
+
+Package your entire codebase into a single, LLM-friendly file. This tool scans a project directory and aggregates all source code, configuration, and text files into one comprehensive context file, streamlining the process of prompting Large Language Models.
+
+
+This tool is designed to simplify feeding entire software projects into Large Language Models. It recursively scans a project directory, gathering all relevant text files (such as source code, markdown, and configuration files) and consolidates their contents into a single, well-structured text file. This eliminates the need to upload numerous files individually, providing the LLM with a complete and holistic view of the project's architecture and logic.
+
+
+---
+
+# Quick Build-up Environment
+
+
+# 
+```bash
+
+# 在專案根目錄建立虛擬環境執行
+python3 -m venv .venv
+
+
+# 若使用 `uv` 管理專案則執行以下指令
+uv python install ">3.10, <=3.11"
+uv puthon pin ">3.10, <=3.11"
+uv venv
+
+
+# 啟用虛擬環境 (macOS / Linux)
+source .venv/bin/activate
+
+
+# 若使用 Windows
+.venv\Scripts\activate
+
+```
+
+
+# 
+```bash
+
+pip install "pytest" "flake8" "pydocstyle[google]" "isort"
+
+# 說明：pydocstyle[google] 會額外安裝支援 Google 風格檢查的元件。
+
+```
+
