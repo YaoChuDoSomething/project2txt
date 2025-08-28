@@ -28,7 +28,7 @@ Package your entire codebase into a single, LLM-friendly file. This tool scans a
 
 1.  **Clone the repository**:
     ```bash
-    git clone https://github.com/your-repo/txt2llm.git
+    git clone https://github.com/YaoChuDoSomething/txt2llm.git
     cd txt2llm
     ```
 
