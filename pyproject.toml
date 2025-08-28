@@ -1,0 +1,24 @@
+[project]
+name = "txt2llm"
+version = "0.1.0"
+description = "A developer utility that consolidates an entire project's text-based files into a single output file, optimized for context-rich interactions with Large Language Models (LLMs)."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "flake8>=7.3.0",
+    "isort>=6.0.1",
+    "pydocstyle>=6.3.0",
+    "pytest>=8.4.1",
+    "setuptools>=80.9.0",
+]
+
+[tool.isort]
+profile = "google"
+line_length = 79
+
+[tool.pydocstyle]
+convention = "google"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"

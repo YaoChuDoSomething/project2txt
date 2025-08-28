@@ -1,3 +1,17 @@
+Metadata-Version: 2.4
+Name: txt2llm
+Version: 0.1.0
+Summary: A developer utility that consolidates an entire project's text-based files into a single output file, optimized for context-rich interactions with Large Language Models (LLMs).
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: flake8>=7.3.0
+Requires-Dist: isort>=6.0.1
+Requires-Dist: pydocstyle>=6.3.0
+Requires-Dist: pytest>=8.4.1
+Requires-Dist: setuptools>=80.9.0
+Dynamic: license-file
+
 # README.md 
 
 

@@ -1,0 +1,11 @@
+# .flake8
+#
+[flake8]
+# PEP 8 建議 docstring 為 72，程式碼為 79。
+max-line-length = 79
+max-doc-length = 72
+
+# 忽略與 black 格式化工具衝突的規則 (可選，但推薦)
+# W503: line break before binary operator
+# E203: whitespace before ':'
+ignore = E203, W503
