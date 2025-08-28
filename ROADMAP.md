@@ -17,6 +17,14 @@
 - **步驟 6: 整合與報告生成 (`generate_report`)**: **完成**
   - `generate_report` 方法已在 `core.py` 中實現並通過整合測試。
 
+## Enhancements
+
+- **任務 1: 優化預設輸出路徑** (Refine Default Output Path): **完成**
+  - **目標**: 變更預設輸出行為。當使用者未指定 `--output` 時，報告應生成於 `txt2llm` 專案根目錄下的 `output/<target_project_name>/` 資料夾內。
+  - **理由**: 避免在使用者當前工作目錄產生雜亂檔案，集中管理所有生成的報告。
+  - **影響範圍**: `src/txt2llm/main.py`, `tests/test_main.py` (新增)。
+
+
 ---
 
 好的，這是一份將 `txt2llm.sh` Bash 腳本轉換為 Python 專案的詳細分析與開發計畫。
