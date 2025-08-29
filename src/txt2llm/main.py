@@ -59,7 +59,7 @@ generated in the project's parent directory.
         else:
             # Determine the txt2llm project root (e.g., /wk2/yaochu/DLAMP_model/txt2llm/)
             # main.py is in src/txt2llm/, so go up three levels from main.py's location
-            txt2llm_project_root = Path(__file__).resolve().parents[3]
+            txt2llm_project_root = Path(__file__).resolve().parents[2]
 
             # Construct the output directory: <txt2llm_project_root>/output/<target_project_name>/
             target_project_name = project_path.name
@@ -71,7 +71,7 @@ generated in the project's parent directory.
             output_path = output_dir / output_filename
 
         # Default configuration values from the roadmap
-        ignored_dirs = {".git", "__pycache__", ".venv"}
+        ignored_dirs = {".git", "__pycache__", ".venv", "output"}
         include_exts = {
             # Code
             ".py", ".java", ".js", ".ts", ".go", ".rs", ".c", ".h", ".cpp",

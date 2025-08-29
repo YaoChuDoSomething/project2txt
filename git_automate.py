@@ -10,7 +10,7 @@ def run_command(command):
         print(f"Error executing command: {command}\nError:\n{e.stderr}")
         return None
 
-def automate_git_push():
+def automate_git_push(commit_message: str):
     """Automates git add, commit, and push."""
     # Get the current branch name
     branch_name = run_command("git rev-parse --abbrev-ref HEAD")
@@ -26,7 +26,7 @@ def automate_git_push():
         return
 
     # Commit changes with a default message
-    commit_message = "Automated commit"
+    
     print(f"Committing with message: \"{commit_message}\"..." ) # Corrected escaping for the commit message string
     if run_command(f'git commit -m "{commit_message}"') is None:
         print("git commit failed. Aborting.")
@@ -41,4 +41,5 @@ def automate_git_push():
     print("Git automation complete!")
 
 if __name__ == "__main__":
-    automate_git_push()
+    message = input("Enter your commit message: ")
+    automate_git_push(message)
