@@ -19,6 +19,8 @@ def mock_project_root(tmp_path: Path) -> Path:
     (tmp_path / "__pycache__").mkdir()  # Ignored directory
     (tmp_path / ".venv").mkdir()  # Ignored directory
     (tmp_path / "temp").mkdir()  # Not ignored by default
+    (tmp_path / "output").mkdir() # Ignored by new config
+    (tmp_path / "output" / "report.txt").write_text("report content") # File in ignored dir
 
     # Files
     (tmp_path / "README.md").write_text("Project README")
@@ -41,7 +43,7 @@ def mock_config(mock_project_root: Path) -> ProjectConfig:
     return ProjectConfig(
         project_root=mock_project_root,
         output_path=mock_project_root / "output.txt",
-        ignored_dirs={'.git', '__pycache__', '.venv'},
+        ignored_dirs={'.git', '__pycache__', '.venv', 'output'},
         include_exts={'.py', '.md', '.js', '.yaml', '.txt'},
     )
 
@@ -120,7 +122,7 @@ def test_generate_report(mock_config: ProjectConfig):
         "## Configuration",
         f"- Project Root: `{mock_config.project_root}`",
         f"- Output Path: `{mock_config.output_path}`",
-        f"- Ignored Directories: `.git, .venv, __pycache__`", # Sorted
+        f"- Ignored Directories: `.git, .venv, __pycache__, output`", # Sorted
         f"- Included Extensions: `.js, .md, .py, .txt, .yaml`", # Sorted
         "",
         "---",

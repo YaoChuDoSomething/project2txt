@@ -155,3 +155,15 @@
 4.  **文件**: 撰寫 `README.md`，說明如何安裝與使用。
 
 這個計畫將 Bash 腳本的邏輯分解為獨立、可測試的 Python 元件，確保了程式碼的品質、可維護性和擴展性。每個步驟都有明確的產出和驗證方法，有助於順利完成轉換工作。
+
+## Known Issues
+
+- **Issue 1: Incorrect Default Output Directory**
+  - **Description**: The current default output directory is `../output/`, which is relative to the execution location. It should be an absolute path within the project, specifically `/wk2/yaochu/DLAMP_model/txt2llm/output/`.
+  - **Impact**: Inconsistent output location, potential for files to be created outside the project directory.
+  - **Affected Files**: `src/txt2llm/main.py`, `src/txt2llm/config.py` (if output path is configured there), `tests/test_main.py`.
+
+- **Issue 2: Project Overview Output Directory Not Skipped**
+  - **Description**: The directory used for storing project overview reports (e.g., `output/txt2llm/`) is currently scanned or processed by the tool itself, leading to self-referential issues or unnecessary processing.
+  - **Impact**: Inefficient processing, potential for infinite loops or incorrect report generation if the tool tries to process its own output.
+  - **Affected Files**: `src/txt2llm/core.py` (`_find_files` method), `src/txt2llm/config.py` (for ignore patterns), `tests/test_core.py`.
